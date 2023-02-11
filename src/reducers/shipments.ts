@@ -4,14 +4,16 @@ import axios from "axios";
 
 type shipmentsState = {
   shipments: IShipments[];
+  loading: boolean;
 };
 
 const initialState: shipmentsState = {
   shipments: [],
+  loading: false,
 };
 
 export const fetchShipments = createAsyncThunk("shipments/fetch", async () => {
-  const res = await axios.get<IShipments[]>("https://my.api.mockaroo.com/shipments.json?key=5e0b62d0");
+  const res = await axios.get<IShipments[]>("https://nagel.dbln999.repl.co/");
   return res.data;
 });
 
@@ -26,9 +28,13 @@ export const shipmentsSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+    builder.addCase(fetchShipments.pending.type, (state) => {
+      state.loading = true;
+    });
     builder.addCase(
       fetchShipments.fulfilled.type,
       (state, action: PayloadAction<IShipments[]>) => {
+        state.loading = false;
         state.shipments = action.payload;
         console.log(state.shipments);
       }
@@ -37,4 +43,4 @@ export const shipmentsSlice = createSlice({
 });
 
 export default shipmentsSlice.reducer;
-export const {removeShipment} = shipmentsSlice.actions;
+export const { removeShipment } = shipmentsSlice.actions;
