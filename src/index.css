@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.headers-style {
+    font-size: 14px;
+    padding: 10px 1.5rem;
+    font-family: "Fira Code";
+    color: #AAA4B2;
+    text-align: start;
+}
+td{
+    color: #758199;
+}
+.font {
+    color: #758199;
+}
+
+.infoContainer > * {
+    flex: 1 1 500px;
+}
