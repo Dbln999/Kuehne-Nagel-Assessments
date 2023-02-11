@@ -11,7 +11,7 @@ const initialState: shipmentsState = {
 };
 
 export const fetchShipments = createAsyncThunk("shipments/fetch", async () => {
-  const res = await axios.get<IShipments[]>("https://nagel.dbln999.repl.co/");
+  const res = await axios.get<IShipments[]>("https://my.api.mockaroo.com/shipments.json?key=5e0b62d0");
   return res.data;
 });
 
