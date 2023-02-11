@@ -19,7 +19,7 @@ const ShipmentDetails = () => {
               key={shipment.orderNo}
               className="mx-auto bg-white rounded relative bottom-20 w-4/5 p-3 h-96"
             >
-              <p className="my-16 mx-5 font font-mono">SHIPMENT DETAILS</p>
+              <p className="my-16 mx-5 font-color font-mono">SHIPMENT DETAILS</p>
               <div className="flex gap-5 flex-wrap-reverse infoContainer">
                 {Object.entries(shipment).map((s) => {
                   return (
@@ -27,7 +27,7 @@ const ShipmentDetails = () => {
                       <p className="font-sans p-3 text-gray-600 font-semibold">{s[0]}</p>
                       <div
                         id="orderInfo"
-                        className="p-4 bg-gray-200 font rounded w-3/4"
+                        className="p-4 bg-gray-200 font-color rounded w-3/4"
                       >
                         {s[1]}
                       </div>

@@ -8,11 +8,13 @@
     font-family: "Fira Code";
     color: #AAA4B2;
     text-align: start;
+    letter-spacing: 2px;
 }
 td{
     color: #758199;
 }
-.font {
+
+.font-color {
     color: #758199;
 }
 
